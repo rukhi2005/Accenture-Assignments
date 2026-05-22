@@ -1,0 +1,823 @@
+﻿Day2_Assignment1
+
+
+use ecommerceDB
+switched to db ecommerceDB
+db["products"].find()
+db.createCollection("products")
+{ ok: 1 }
+db.products.insertMany([
+{
+ name: "iPhone 14",
+ category: "Electronics",
+ price: 75000,
+ stock: 25,
+ brand: "Apple"
+},
+{
+ name: "Samsung Galaxy S22",
+ category: "Electronics",
+ price: 65000,
+ stock: 30,
+ brand: "Samsung"
+},
+{
+ name: "Dell Laptop",
+ category: "Computers",
+ price: 55000,
+ stock: 15,
+ brand: "Dell"
+},
+{
+ name: "HP Pavilion Laptop",
+ category: "Computers",
+ price: 50000,
+ stock: 12,
+ brand: "HP"
+},
+{
+ name: "Nike Shoes",
+ category: "Fashion",
+ price: 5000,
+ stock: 50,
+ brand: "Nike"
+}
+])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('6a0ff167e283625b9c148839'),
+    '1': ObjectId('6a0ff167e283625b9c14883a'),
+    '2': ObjectId('6a0ff167e283625b9c14883b'),
+    '3': ObjectId('6a0ff167e283625b9c14883c'),
+    '4': ObjectId('6a0ff167e283625b9c14883d')
+  }
+}
+db.products.find()
+{
+  _id: ObjectId('6a0ff14ed4ec3dc7a3012a6d'),
+  name: 'iPhone 14',
+  category: 'Electronics',
+  price: 75000,
+  stock: 25,
+  brand: 'Apple'
+}
+{
+  _id: ObjectId('6a0ff14ed4ec3dc7a3012a6e'),
+  name: 'Samsung Galaxy S22',
+  category: 'Electronics',
+  price: 65000,
+  stock: 30,
+  brand: 'Samsung'
+}
+{
+  _id: ObjectId('6a0ff14ed4ec3dc7a3012a6f'),
+  name: 'Dell Laptop',
+  category: 'Computers',
+  price: 55000,
+  stock: 15,
+  brand: 'Dell'
+}
+{
+  _id: ObjectId('6a0ff14ed4ec3dc7a3012a70'),
+  name: 'HP Pavilion Laptop',
+  category: 'Computers',
+  price: 50000,
+  stock: 12,
+  brand: 'HP'
+}
+{
+  _id: ObjectId('6a0ff14ed4ec3dc7a3012a71'),
+  name: 'Nike Shoes',
+  category: 'Fashion',
+  price: 5000,
+  stock: 50,
+  brand: 'Nike'
+}
+{
+  _id: ObjectId('6a0ff167e283625b9c148839'),
+  name: 'iPhone 14',
+  category: 'Electronics',
+  price: 75000,
+  stock: 25,
+  brand: 'Apple'
+}
+{
+  _id: ObjectId('6a0ff167e283625b9c14883a'),
+  name: 'Samsung Galaxy S22',
+  category: 'Electronics',
+  price: 65000,
+  stock: 30,
+  brand: 'Samsung'
+}
+{
+  _id: ObjectId('6a0ff167e283625b9c14883b'),
+  name: 'Dell Laptop',
+  category: 'Computers',
+  price: 55000,
+  stock: 15,
+  brand: 'Dell'
+}
+{
+  _id: ObjectId('6a0ff167e283625b9c14883c'),
+  name: 'HP Pavilion Laptop',
+  category: 'Computers',
+  price: 50000,
+  stock: 12,
+  brand: 'HP'
+}
+{
+  _id: ObjectId('6a0ff167e283625b9c14883d'),
+  name: 'Nike Shoes',
+  category: 'Fashion',
+  price: 5000,
+  stock: 50,
+  brand: 'Nike'
+}
+db.products.find().pretty()
+{
+  _id: ObjectId('6a0ff14ed4ec3dc7a3012a6d'),
+  name: 'iPhone 14',
+  category: 'Electronics',
+  price: 75000,
+  stock: 25,
+  brand: 'Apple'
+}
+{
+  _id: ObjectId('6a0ff14ed4ec3dc7a3012a6e'),
+  name: 'Samsung Galaxy S22',
+  category: 'Electronics',
+  price: 65000,
+  stock: 30,
+  brand: 'Samsung'
+}
+{
+  _id: ObjectId('6a0ff14ed4ec3dc7a3012a6f'),
+  name: 'Dell Laptop',
+  category: 'Computers',
+  price: 55000,
+  stock: 15,
+  brand: 'Dell'
+}
+{
+  _id: ObjectId('6a0ff14ed4ec3dc7a3012a70'),
+  name: 'HP Pavilion Laptop',
+  category: 'Computers',
+  price: 50000,
+  stock: 12,
+  brand: 'HP'
+}
+{
+  _id: ObjectId('6a0ff14ed4ec3dc7a3012a71'),
+  name: 'Nike Shoes',
+  category: 'Fashion',
+  price: 5000,
+  stock: 50,
+  brand: 'Nike'
+}
+{
+  _id: ObjectId('6a0ff167e283625b9c148839'),
+  name: 'iPhone 14',
+  category: 'Electronics',
+  price: 75000,
+  stock: 25,
+  brand: 'Apple'
+}
+{
+  _id: ObjectId('6a0ff167e283625b9c14883a'),
+  name: 'Samsung Galaxy S22',
+  category: 'Electronics',
+  price: 65000,
+  stock: 30,
+  brand: 'Samsung'
+}
+{
+  _id: ObjectId('6a0ff167e283625b9c14883b'),
+  name: 'Dell Laptop',
+  category: 'Computers',
+  price: 55000,
+  stock: 15,
+  brand: 'Dell'
+}
+{
+  _id: ObjectId('6a0ff167e283625b9c14883c'),
+  name: 'HP Pavilion Laptop',
+  category: 'Computers',
+  price: 50000,
+  stock: 12,
+  brand: 'HP'
+}
+{
+  _id: ObjectId('6a0ff167e283625b9c14883d'),
+  name: 'Nike Shoes',
+  category: 'Fashion',
+  price: 5000,
+  stock: 50,
+  brand: 'Nike'
+}
+db.products.findOne({ name: "iPhone 14" })
+{
+  _id: ObjectId('6a0ff14ed4ec3dc7a3012a6d'),
+  name: 'iPhone 14',
+  category: 'Electronics',
+  price: 75000,
+  stock: 25,
+  brand: 'Apple'
+}
+db.products.find({ category: "Electronics" })
+{
+  _id: ObjectId('6a0ff14ed4ec3dc7a3012a6d'),
+  name: 'iPhone 14',
+  category: 'Electronics',
+  price: 75000,
+  stock: 25,
+  brand: 'Apple'
+}
+{
+  _id: ObjectId('6a0ff14ed4ec3dc7a3012a6e'),
+  name: 'Samsung Galaxy S22',
+  category: 'Electronics',
+  price: 65000,
+  stock: 30,
+  brand: 'Samsung'
+}
+{
+  _id: ObjectId('6a0ff167e283625b9c148839'),
+  name: 'iPhone 14',
+  category: 'Electronics',
+  price: 75000,
+  stock: 25,
+  brand: 'Apple'
+}
+{
+  _id: ObjectId('6a0ff167e283625b9c14883a'),
+  name: 'Samsung Galaxy S22',
+  category: 'Electronics',
+  price: 65000,
+  stock: 30,
+  brand: 'Samsung'
+}
+db.products.find({ price: { $lt: 5000 } })
+db.products.find({ price: { $lte: 5000 } })
+{
+  _id: ObjectId('6a0ff14ed4ec3dc7a3012a71'),
+  name: 'Nike Shoes',
+  category: 'Fashion',
+  price: 5000,
+  stock: 50,
+  brand: 'Nike'
+}
+{
+  _id: ObjectId('6a0ff167e283625b9c14883d'),
+  name: 'Nike Shoes',
+  category: 'Fashion',
+  price: 5000,
+  stock: 50,
+  brand: 'Nike'
+}
+db.products.find({ price: { $gt: 5000 } })
+{
+  _id: ObjectId('6a0ff14ed4ec3dc7a3012a6d'),
+  name: 'iPhone 14',
+  category: 'Electronics',
+  price: 75000,
+  stock: 25,
+  brand: 'Apple'
+}
+{
+  _id: ObjectId('6a0ff14ed4ec3dc7a3012a6e'),
+  name: 'Samsung Galaxy S22',
+  category: 'Electronics',
+  price: 65000,
+  stock: 30,
+  brand: 'Samsung'
+}
+{
+  _id: ObjectId('6a0ff14ed4ec3dc7a3012a6f'),
+  name: 'Dell Laptop',
+  category: 'Computers',
+  price: 55000,
+  stock: 15,
+  brand: 'Dell'
+}
+{
+  _id: ObjectId('6a0ff14ed4ec3dc7a3012a70'),
+  name: 'HP Pavilion Laptop',
+  category: 'Computers',
+  price: 50000,
+  stock: 12,
+  brand: 'HP'
+}
+{
+  _id: ObjectId('6a0ff167e283625b9c148839'),
+  name: 'iPhone 14',
+  category: 'Electronics',
+  price: 75000,
+  stock: 25,
+  brand: 'Apple'
+}
+{
+  _id: ObjectId('6a0ff167e283625b9c14883a'),
+  name: 'Samsung Galaxy S22',
+  category: 'Electronics',
+  price: 65000,
+  stock: 30,
+  brand: 'Samsung'
+}
+{
+  _id: ObjectId('6a0ff167e283625b9c14883b'),
+  name: 'Dell Laptop',
+  category: 'Computers',
+  price: 55000,
+  stock: 15,
+  brand: 'Dell'
+}
+{
+  _id: ObjectId('6a0ff167e283625b9c14883c'),
+  name: 'HP Pavilion Laptop',
+  category: 'Computers',
+  price: 50000,
+  stock: 12,
+  brand: 'HP'
+}
+db.products.find({ price: { $gte: 5000 } })
+{
+  _id: ObjectId('6a0ff14ed4ec3dc7a3012a6d'),
+  name: 'iPhone 14',
+  category: 'Electronics',
+  price: 75000,
+  stock: 25,
+  brand: 'Apple'
+}
+{
+  _id: ObjectId('6a0ff14ed4ec3dc7a3012a6e'),
+  name: 'Samsung Galaxy S22',
+  category: 'Electronics',
+  price: 65000,
+  stock: 30,
+  brand: 'Samsung'
+}
+{
+  _id: ObjectId('6a0ff14ed4ec3dc7a3012a6f'),
+  name: 'Dell Laptop',
+  category: 'Computers',
+  price: 55000,
+  stock: 15,
+  brand: 'Dell'
+}
+{
+  _id: ObjectId('6a0ff14ed4ec3dc7a3012a70'),
+  name: 'HP Pavilion Laptop',
+  category: 'Computers',
+  price: 50000,
+  stock: 12,
+  brand: 'HP'
+}
+{
+  _id: ObjectId('6a0ff14ed4ec3dc7a3012a71'),
+  name: 'Nike Shoes',
+  category: 'Fashion',
+  price: 5000,
+  stock: 50,
+  brand: 'Nike'
+}
+{
+  _id: ObjectId('6a0ff167e283625b9c148839'),
+  name: 'iPhone 14',
+  category: 'Electronics',
+  price: 75000,
+  stock: 25,
+  brand: 'Apple'
+}
+{
+  _id: ObjectId('6a0ff167e283625b9c14883a'),
+  name: 'Samsung Galaxy S22',
+  category: 'Electronics',
+  price: 65000,
+  stock: 30,
+  brand: 'Samsung'
+}
+{
+  _id: ObjectId('6a0ff167e283625b9c14883b'),
+  name: 'Dell Laptop',
+  category: 'Computers',
+  price: 55000,
+  stock: 15,
+  brand: 'Dell'
+}
+{
+  _id: ObjectId('6a0ff167e283625b9c14883c'),
+  name: 'HP Pavilion Laptop',
+  category: 'Computers',
+  price: 50000,
+  stock: 12,
+  brand: 'HP'
+}
+{
+  _id: ObjectId('6a0ff167e283625b9c14883d'),
+  name: 'Nike Shoes',
+  category: 'Fashion',
+  price: 5000,
+  stock: 50,
+  brand: 'Nike'
+}
+db.products.find({ price: { $ne: 5000 } })
+{
+  _id: ObjectId('6a0ff14ed4ec3dc7a3012a6d'),
+  name: 'iPhone 14',
+  category: 'Electronics',
+  price: 75000,
+  stock: 25,
+  brand: 'Apple'
+}
+{
+  _id: ObjectId('6a0ff14ed4ec3dc7a3012a6e'),
+  name: 'Samsung Galaxy S22',
+  category: 'Electronics',
+  price: 65000,
+  stock: 30,
+  brand: 'Samsung'
+}
+{
+  _id: ObjectId('6a0ff14ed4ec3dc7a3012a6f'),
+  name: 'Dell Laptop',
+  category: 'Computers',
+  price: 55000,
+  stock: 15,
+  brand: 'Dell'
+}
+{
+  _id: ObjectId('6a0ff14ed4ec3dc7a3012a70'),
+  name: 'HP Pavilion Laptop',
+  category: 'Computers',
+  price: 50000,
+  stock: 12,
+  brand: 'HP'
+}
+{
+  _id: ObjectId('6a0ff167e283625b9c148839'),
+  name: 'iPhone 14',
+  category: 'Electronics',
+  price: 75000,
+  stock: 25,
+  brand: 'Apple'
+}
+{
+  _id: ObjectId('6a0ff167e283625b9c14883a'),
+  name: 'Samsung Galaxy S22',
+  category: 'Electronics',
+  price: 65000,
+  stock: 30,
+  brand: 'Samsung'
+}
+{
+  _id: ObjectId('6a0ff167e283625b9c14883b'),
+  name: 'Dell Laptop',
+  category: 'Computers',
+  price: 55000,
+  stock: 15,
+  brand: 'Dell'
+}
+{
+  _id: ObjectId('6a0ff167e283625b9c14883c'),
+  name: 'HP Pavilion Laptop',
+  category: 'Computers',
+  price: 50000,
+  stock: 12,
+  brand: 'HP'
+}
+db.products.find({
+ price: { $in: [1000,2000,5000] }
+})
+{
+  _id: ObjectId('6a0ff14ed4ec3dc7a3012a71'),
+  name: 'Nike Shoes',
+  category: 'Fashion',
+  price: 5000,
+  stock: 50,
+  brand: 'Nike'
+}
+{
+  _id: ObjectId('6a0ff167e283625b9c14883d'),
+  name: 'Nike Shoes',
+  category: 'Fashion',
+  price: 5000,
+  stock: 50,
+  brand: 'Nike'
+}
+db.products.find({
+ price: { $nin: [1000,2000,5000] }
+})
+{
+  _id: ObjectId('6a0ff14ed4ec3dc7a3012a6d'),
+  name: 'iPhone 14',
+  category: 'Electronics',
+  price: 75000,
+  stock: 25,
+  brand: 'Apple'
+}
+{
+  _id: ObjectId('6a0ff14ed4ec3dc7a3012a6e'),
+  name: 'Samsung Galaxy S22',
+  category: 'Electronics',
+  price: 65000,
+  stock: 30,
+  brand: 'Samsung'
+}
+{
+  _id: ObjectId('6a0ff14ed4ec3dc7a3012a6f'),
+  name: 'Dell Laptop',
+  category: 'Computers',
+  price: 55000,
+  stock: 15,
+  brand: 'Dell'
+}
+{
+  _id: ObjectId('6a0ff14ed4ec3dc7a3012a70'),
+  name: 'HP Pavilion Laptop',
+  category: 'Computers',
+  price: 50000,
+  stock: 12,
+  brand: 'HP'
+}
+{
+  _id: ObjectId('6a0ff167e283625b9c148839'),
+  name: 'iPhone 14',
+  category: 'Electronics',
+  price: 75000,
+  stock: 25,
+  brand: 'Apple'
+}
+{
+  _id: ObjectId('6a0ff167e283625b9c14883a'),
+  name: 'Samsung Galaxy S22',
+  category: 'Electronics',
+  price: 65000,
+  stock: 30,
+  brand: 'Samsung'
+}
+{
+  _id: ObjectId('6a0ff167e283625b9c14883b'),
+  name: 'Dell Laptop',
+  category: 'Computers',
+  price: 55000,
+  stock: 15,
+  brand: 'Dell'
+}
+{
+  _id: ObjectId('6a0ff167e283625b9c14883c'),
+  name: 'HP Pavilion Laptop',
+  category: 'Computers',
+  price: 50000,
+  stock: 12,
+  brand: 'HP'
+}
+db.products.find({
+ category: "Electronics",
+ price: 5000
+})
+db.products.find({
+ $or: [
+  { category: "Electronics" },
+  { brand: "Apple" }
+ ]
+})
+{
+  _id: ObjectId('6a0ff14ed4ec3dc7a3012a6d'),
+  name: 'iPhone 14',
+  category: 'Electronics',
+  price: 75000,
+  stock: 25,
+  brand: 'Apple'
+}
+{
+  _id: ObjectId('6a0ff14ed4ec3dc7a3012a6e'),
+  name: 'Samsung Galaxy S22',
+  category: 'Electronics',
+  price: 65000,
+  stock: 30,
+  brand: 'Samsung'
+}
+{
+  _id: ObjectId('6a0ff167e283625b9c148839'),
+  name: 'iPhone 14',
+  category: 'Electronics',
+  price: 75000,
+  stock: 25,
+  brand: 'Apple'
+}
+{
+  _id: ObjectId('6a0ff167e283625b9c14883a'),
+  name: 'Samsung Galaxy S22',
+  category: 'Electronics',
+  price: 65000,
+  stock: 30,
+  brand: 'Samsung'
+}
+db.products.find({
+ $or: [
+  { price: { $gt: 5000 } },
+  { brand: "Samsung" }
+ ]
+})
+{
+  _id: ObjectId('6a0ff14ed4ec3dc7a3012a6d'),
+  name: 'iPhone 14',
+  category: 'Electronics',
+  price: 75000,
+  stock: 25,
+  brand: 'Apple'
+}
+{
+  _id: ObjectId('6a0ff14ed4ec3dc7a3012a6e'),
+  name: 'Samsung Galaxy S22',
+  category: 'Electronics',
+  price: 65000,
+  stock: 30,
+  brand: 'Samsung'
+}
+{
+  _id: ObjectId('6a0ff14ed4ec3dc7a3012a6f'),
+  name: 'Dell Laptop',
+  category: 'Computers',
+  price: 55000,
+  stock: 15,
+  brand: 'Dell'
+}
+{
+  _id: ObjectId('6a0ff14ed4ec3dc7a3012a70'),
+  name: 'HP Pavilion Laptop',
+  category: 'Computers',
+  price: 50000,
+  stock: 12,
+  brand: 'HP'
+}
+{
+  _id: ObjectId('6a0ff167e283625b9c148839'),
+  name: 'iPhone 14',
+  category: 'Electronics',
+  price: 75000,
+  stock: 25,
+  brand: 'Apple'
+}
+{
+  _id: ObjectId('6a0ff167e283625b9c14883a'),
+  name: 'Samsung Galaxy S22',
+  category: 'Electronics',
+  price: 65000,
+  stock: 30,
+  brand: 'Samsung'
+}
+{
+  _id: ObjectId('6a0ff167e283625b9c14883b'),
+  name: 'Dell Laptop',
+  category: 'Computers',
+  price: 55000,
+  stock: 15,
+  brand: 'Dell'
+}
+{
+  _id: ObjectId('6a0ff167e283625b9c14883c'),
+  name: 'HP Pavilion Laptop',
+  category: 'Computers',
+  price: 50000,
+  stock: 12,
+  brand: 'HP'
+}
+db.products.find({
+ price: { $gte: 5000, $lte: 20000 }
+})
+{
+  _id: ObjectId('6a0ff14ed4ec3dc7a3012a71'),
+  name: 'Nike Shoes',
+  category: 'Fashion',
+  price: 5000,
+  stock: 50,
+  brand: 'Nike'
+}
+{
+  _id: ObjectId('6a0ff167e283625b9c14883d'),
+  name: 'Nike Shoes',
+  category: 'Fashion',
+  price: 5000,
+  stock: 50,
+  brand: 'Nike'
+}
+db.products.find({
+ price: { $not: { $gt: 5000 } }
+})
+{
+  _id: ObjectId('6a0ff14ed4ec3dc7a3012a71'),
+  name: 'Nike Shoes',
+  category: 'Fashion',
+  price: 5000,
+  stock: 50,
+  brand: 'Nike'
+}
+{
+  _id: ObjectId('6a0ff167e283625b9c14883d'),
+  name: 'Nike Shoes',
+  category: 'Fashion',
+  price: 5000,
+  stock: 50,
+  brand: 'Nike'
+}
+db.products.updateOne(
+ { name: "Nike Shoes" },
+ { $set: { name: "Nike Running Shoes" } }
+)
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+db.products.updateMany(
+ { price: { $lt: 5000 } },
+ { $set: { stock: 100 } }
+)
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 0,
+  modifiedCount: 0,
+  upsertedCount: 0
+}
+db.products.updateOne(
+ { brand: "Dell" },
+ { $set: { price: 60000 } }
+)
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+db.products.updateMany(
+ { category: "Electronics" },
+ { $set: { stock: 40 } }
+)
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 4,
+  modifiedCount: 4,
+  upsertedCount: 0
+}
+db.products.replaceOne(
+ { name: "Dell Laptop" },
+ {
+  name: "MacBook Air",
+  category: "Computers",
+  price: 95000,
+  stock: 10,
+  brand: "Apple"
+ }
+)
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+db.products.deleteOne({
+ name: "Nike Running Shoes"
+})
+{
+  acknowledged: true,
+  deletedCount: 1
+}
+db.products.deleteOne({
+ price: { $lt: 2000 }
+})
+{
+  acknowledged: true,
+  deletedCount: 0
+}
+db.products.deleteMany({})
+{
+  acknowledged: true,
+  deletedCount: 9
+}
+db.products.find(
+ {},
+ {
+  name: 1,
+  price: 1
+ }
+)
+db.products.find(
+ {},
+ {
+  name: 1,
+  price: 1,
+  _id: 0
+ }
+)
+db.products.find().limit(5)
+db.products.find().skip(5).limit(5)
+db.products.find().sort({ price: 1 })
+db.products.find().sort({ price: -1 })
