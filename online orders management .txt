@@ -1,0 +1,357 @@
+﻿use ecommerce
+switched to db ecommerce
+db["orders"].find()
+{
+  _id: ObjectId('6a153a852147ba85b32ea175'),
+  customerName: 'Asha',
+  product: 'Laptop',
+  category: 'Electronics',
+  quantity: 1,
+  price: 50000,
+  totalAmount: 50000
+}
+{
+  _id: ObjectId('6a153a852147ba85b32ea176'),
+  customerName: 'Ravi',
+  product: 'Mobile',
+  category: 'Electronics',
+  quantity: 2,
+  price: 20000,
+  totalAmount: 40000
+}
+{
+  _id: ObjectId('6a153a852147ba85b32ea177'),
+  customerName: 'Kiran',
+  product: 'Shoes',
+  category: 'Fashion',
+  quantity: 3,
+  price: 2000,
+  totalAmount: 6000
+}
+{
+  _id: ObjectId('6a153a852147ba85b32ea178'),
+  customerName: 'Divya',
+  product: 'Watch',
+  category: 'Accessories',
+  quantity: 2,
+  price: 3000,
+  totalAmount: 6000
+}
+{
+  _id: ObjectId('6a153a852147ba85b32ea179'),
+  customerName: 'Manoj',
+  product: 'Table',
+  category: 'Furniture',
+  quantity: 1,
+  price: 10000,
+  totalAmount: 10000
+}
+{
+  _id: ObjectId('6a153a852147ba85b32ea17a'),
+  customerName: 'Sneha',
+  product: 'Chair',
+  category: 'Furniture',
+  quantity: 4,
+  price: 2500,
+  totalAmount: 10000
+}
+{
+  _id: ObjectId('6a153a852147ba85b32ea17b'),
+  customerName: 'Arun',
+  product: 'Headphones',
+  category: 'Electronics',
+  quantity: 2,
+  price: 1500,
+  totalAmount: 3000
+}
+{
+  _id: ObjectId('6a153a852147ba85b32ea17c'),
+  customerName: 'Meena',
+  product: 'Bag',
+  category: 'Fashion',
+  quantity: 2,
+  price: 1200,
+  totalAmount: 2400
+}
+{
+  _id: ObjectId('6a153a852147ba85b32ea17d'),
+  customerName: 'Vijay',
+  product: 'TV',
+  category: 'Electronics',
+  quantity: 1,
+  price: 30000,
+  totalAmount: 30000
+}
+{
+  _id: ObjectId('6a153a852147ba85b32ea17e'),
+  customerName: 'Priya',
+  product: 'Dress',
+  category: 'Fashion',
+  quantity: 5,
+  price: 1000,
+  totalAmount: 5000
+}
+db.orders.aggregate([
+{
+  $group: {
+    _id: null,
+    minAmount: { $min: "$totalAmount" }
+  }
+}
+])
+{
+  _id: null,
+  minAmount: 2400
+}
+db.orders.aggregate([
+{
+  $group: {
+    _id: null,
+    maxAmount: { $max: "$totalAmount" }
+  }
+}
+])
+{
+  _id: null,
+  maxAmount: 50000
+}
+db.orders.aggregate([
+{
+  $group: {
+    _id: null,
+    avgAmount: { $avg: "$totalAmount" }
+  }
+}
+])
+{
+  _id: null,
+  avgAmount: 16240
+}
+db.orders.aggregate([
+{
+  $group: {
+    _id: null,
+    totalRevenue: { $sum: "$totalAmount" }
+  }
+}
+])
+{
+  _id: null,
+  totalRevenue: 162400
+}
+db.orders.aggregate([
+{
+  $match: {
+    totalAmount: { $gt: 10000 }
+  }
+}
+])
+{
+  _id: ObjectId('6a153a852147ba85b32ea175'),
+  customerName: 'Asha',
+  product: 'Laptop',
+  category: 'Electronics',
+  quantity: 1,
+  price: 50000,
+  totalAmount: 50000
+}
+{
+  _id: ObjectId('6a153a852147ba85b32ea176'),
+  customerName: 'Ravi',
+  product: 'Mobile',
+  category: 'Electronics',
+  quantity: 2,
+  price: 20000,
+  totalAmount: 40000
+}
+{
+  _id: ObjectId('6a153a852147ba85b32ea17d'),
+  customerName: 'Vijay',
+  product: 'TV',
+  category: 'Electronics',
+  quantity: 1,
+  price: 30000,
+  totalAmount: 30000
+}
+db.orders.aggregate([
+{
+  $project: {
+    customerName: 1,
+    totalAmount: 1,
+    _id: 0
+  }
+}
+])
+{
+  customerName: 'Asha',
+  totalAmount: 50000
+}
+{
+  customerName: 'Ravi',
+  totalAmount: 40000
+}
+{
+  customerName: 'Kiran',
+  totalAmount: 6000
+}
+{
+  customerName: 'Divya',
+  totalAmount: 6000
+}
+{
+  customerName: 'Manoj',
+  totalAmount: 10000
+}
+{
+  customerName: 'Sneha',
+  totalAmount: 10000
+}
+{
+  customerName: 'Arun',
+  totalAmount: 3000
+}
+{
+  customerName: 'Meena',
+  totalAmount: 2400
+}
+{
+  customerName: 'Vijay',
+  totalAmount: 30000
+}
+{
+  customerName: 'Priya',
+  totalAmount: 5000
+}
+db.orders.aggregate([
+{
+  $sort: {
+    totalAmount: -1
+  }
+}
+])
+{
+  _id: ObjectId('6a153a852147ba85b32ea175'),
+  customerName: 'Asha',
+  product: 'Laptop',
+  category: 'Electronics',
+  quantity: 1,
+  price: 50000,
+  totalAmount: 50000
+}
+{
+  _id: ObjectId('6a153a852147ba85b32ea176'),
+  customerName: 'Ravi',
+  product: 'Mobile',
+  category: 'Electronics',
+  quantity: 2,
+  price: 20000,
+  totalAmount: 40000
+}
+{
+  _id: ObjectId('6a153a852147ba85b32ea17d'),
+  customerName: 'Vijay',
+  product: 'TV',
+  category: 'Electronics',
+  quantity: 1,
+  price: 30000,
+  totalAmount: 30000
+}
+{
+  _id: ObjectId('6a153a852147ba85b32ea179'),
+  customerName: 'Manoj',
+  product: 'Table',
+  category: 'Furniture',
+  quantity: 1,
+  price: 10000,
+  totalAmount: 10000
+}
+{
+  _id: ObjectId('6a153a852147ba85b32ea17a'),
+  customerName: 'Sneha',
+  product: 'Chair',
+  category: 'Furniture',
+  quantity: 4,
+  price: 2500,
+  totalAmount: 10000
+}
+{
+  _id: ObjectId('6a153a852147ba85b32ea177'),
+  customerName: 'Kiran',
+  product: 'Shoes',
+  category: 'Fashion',
+  quantity: 3,
+  price: 2000,
+  totalAmount: 6000
+}
+{
+  _id: ObjectId('6a153a852147ba85b32ea178'),
+  customerName: 'Divya',
+  product: 'Watch',
+  category: 'Accessories',
+  quantity: 2,
+  price: 3000,
+  totalAmount: 6000
+}
+{
+  _id: ObjectId('6a153a852147ba85b32ea17e'),
+  customerName: 'Priya',
+  product: 'Dress',
+  category: 'Fashion',
+  quantity: 5,
+  price: 1000,
+  totalAmount: 5000
+}
+{
+  _id: ObjectId('6a153a852147ba85b32ea17b'),
+  customerName: 'Arun',
+  product: 'Headphones',
+  category: 'Electronics',
+  quantity: 2,
+  price: 1500,
+  totalAmount: 3000
+}
+{
+  _id: ObjectId('6a153a852147ba85b32ea17c'),
+  customerName: 'Meena',
+  product: 'Bag',
+  category: 'Fashion',
+  quantity: 2,
+  price: 1200,
+  totalAmount: 2400
+}
+db.orders.aggregate([
+{
+  $skip: 2
+},
+{
+  $limit: 3
+}
+])
+{
+  _id: ObjectId('6a153a852147ba85b32ea177'),
+  customerName: 'Kiran',
+  product: 'Shoes',
+  category: 'Fashion',
+  quantity: 3,
+  price: 2000,
+  totalAmount: 6000
+}
+{
+  _id: ObjectId('6a153a852147ba85b32ea178'),
+  customerName: 'Divya',
+  product: 'Watch',
+  category: 'Accessories',
+  quantity: 2,
+  price: 3000,
+  totalAmount: 6000
+}
+{
+  _id: ObjectId('6a153a852147ba85b32ea179'),
+  customerName: 'Manoj',
+  product: 'Table',
+  category: 'Furniture',
+  quantity: 1,
+  price: 10000,
+  totalAmount: 10000
+}
+ecommerce
